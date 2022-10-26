@@ -26,7 +26,6 @@ class LambdaS3Code(Stack):
             timeout=Duration.seconds(300)
         )
 
-
 app = App()
 LambdaS3Code(app, "LambdaS3CodeExample")
 app.synth()

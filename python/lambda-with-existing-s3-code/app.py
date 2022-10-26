@@ -11,7 +11,7 @@ class LambdaS3Code(Stack):
         super().__init__(app, id)
 
         lambda_code_bucket = s3.Bucket.from_bucket_attributes(
-            self, 'LambdaCodeBucket',
+            self, 'omtestcode',
             bucket_name='my-lambda-code-bucket'
         )
 

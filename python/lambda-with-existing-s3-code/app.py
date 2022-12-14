@@ -11,8 +11,8 @@ class LambdaS3Code(Stack):
         super().__init__(app, id)
 
         lambda_code_bucket = s3.Bucket.from_bucket_attributes(
-            self, 'omtestcode',
-            bucket_name='my-lambda-code-bucket'
+            self, 'LambdaCodeBucket',
+            bucket_name='omtestcode'
         )
 
         lambdaFn = lambda_.Function(
@@ -25,6 +25,7 @@ class LambdaS3Code(Stack):
             runtime=lambda_.Runtime.PYTHON_3_7,
             timeout=Duration.seconds(300)
         )
+
 
 app = App()
 LambdaS3Code(app, "LambdaS3CodeExample")
